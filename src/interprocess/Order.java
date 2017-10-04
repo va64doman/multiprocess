@@ -32,29 +32,45 @@ public class Order {
         customerAddress = address;
     }
     
-    public String getProduct(){
+    public String getProduct()
+    {
         return productName;
     }
-    public int getQuantity(){
+    public int getQuantity()
+    {
         return productQuantity;
     }
-    public String getName(){
+    public String getName()
+    {
         return customerName;
     }
-    public String getAddress(){
+    public String getAddress()
+    {
         return customerAddress;
     }
     
-    public void setProduct(String name){
+    public void setProduct(String name)
+    {
         productName = name;
     }
-    public void setQuantity(int quantity){
+    public void setQuantity(int quantity)
+    {
         productQuantity = quantity;
     }
-    public void setName(String name){
+    public void setName(String name)
+    {
         customerName = name;
     }
-    public void setAddress(String address){
+    public void setAddress(String address)
+    {
         customerAddress = address;
+    }
+    
+    public void printDetails()
+    {
+        System.out.println("Customer name: " + customerName);
+        System.out.println("Customer address: " + customerAddress);
+        System.out.println("Product name: " + productName);
+        System.out.println("Quantity: " + productQuantity);
     }
 }

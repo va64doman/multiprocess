@@ -24,6 +24,10 @@ public class Interprocess {
         output.connect(input);
         
         Runnable producer = () -> message.produceOrder(output);
+        Runnable consumer = () -> message.consumeOrder(input);
+        
+        new Thread(producer).start();
+        new Thread(consumer).start();
     }
     
 }
