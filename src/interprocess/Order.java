@@ -9,6 +9,7 @@ package interprocess;
  *
  * @author Van Do
  */
+
 public class Order {
     // Get and set product's name
     private String productName;
@@ -18,12 +19,12 @@ public class Order {
     private String customerName;
     // Get and set customer's address
     private String customerAddress;
-    
+    // Null constructor
     public Order()
     {
         
     }
-    
+    // Parameterised constructor
     public Order(String product, int quantity, String customer, String address)
     {
         productName = product;
@@ -31,7 +32,7 @@ public class Order {
         customerName = customer;
         customerAddress = address;
     }
-    
+    // Getters
     public String getProduct()
     {
         return productName;
@@ -48,7 +49,7 @@ public class Order {
     {
         return customerAddress;
     }
-    
+    // Setters
     public void setProduct(String name)
     {
         productName = name;
@@ -65,7 +66,7 @@ public class Order {
     {
         customerAddress = address;
     }
-    
+    // Print order's details
     public void printDetails()
     {
         System.out.println("Customer name: " + customerName);
