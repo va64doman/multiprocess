@@ -1,0 +1,97 @@
+\hypertarget{classinterprocess_1_1_message}{}\section{interprocess.\+Message Class Reference}
+\label{classinterprocess_1_1_message}\index{interprocess.\+Message@{interprocess.\+Message}}
+Inheritance diagram for interprocess.\+Message\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classinterprocess_1_1_message}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classinterprocess_1_1_message_a753fc2d9bffff59d32d9a20512ac6639}{produce\+Order} (Piped\+Output\+Stream output, List$<$ \hyperlink{classinterprocess_1_1_order}{Order} $>$ order)
+\item 
+void \hyperlink{classinterprocess_1_1_message_ada4c768cf0688deaede00d43220fd100}{consume\+Order} (Piped\+Input\+Stream input)
+\item 
+void \hyperlink{classinterprocess_1_1_message_a66e94ca490a4bae0e26db95052aa3956}{add\+Order} (Piped\+Output\+Stream output)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classinterprocess_1_1_message_a594aec63ced8dc0b7440ceae46e71c52}{handle\+Int} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classinterprocess_1_1_message}{Message} --- This class allows to read or write message stream from one end of the pipe to another end. \begin{DoxyAuthor}{Author}
+Van Do 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classinterprocess_1_1_message_a66e94ca490a4bae0e26db95052aa3956}\label{classinterprocess_1_1_message_a66e94ca490a4bae0e26db95052aa3956}} 
+\index{interprocess\+::\+Message@{interprocess\+::\+Message}!add\+Order@{add\+Order}}
+\index{add\+Order@{add\+Order}!interprocess\+::\+Message@{interprocess\+::\+Message}}
+\subsubsection{\texorpdfstring{add\+Order()}{addOrder()}}
+{\footnotesize\ttfamily void interprocess.\+Message.\+add\+Order (\begin{DoxyParamCaption}\item[{Piped\+Output\+Stream}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create a list of orders by user interface. 
+\begin{DoxyParams}{Parameters}
+{\em output} & using output piped stream for produce order method to enable to connect pipes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classinterprocess_1_1_message_ada4c768cf0688deaede00d43220fd100}\label{classinterprocess_1_1_message_ada4c768cf0688deaede00d43220fd100}} 
+\index{interprocess\+::\+Message@{interprocess\+::\+Message}!consume\+Order@{consume\+Order}}
+\index{consume\+Order@{consume\+Order}!interprocess\+::\+Message@{interprocess\+::\+Message}}
+\subsubsection{\texorpdfstring{consume\+Order()}{consumeOrder()}}
+{\footnotesize\ttfamily void interprocess.\+Message.\+consume\+Order (\begin{DoxyParamCaption}\item[{Piped\+Input\+Stream}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Read J\+S\+ON string from piped output stream and convert into list of \hyperlink{classinterprocess_1_1_order}{Order} objects to make it readable for the receiver. 
+\begin{DoxyParams}{Parameters}
+{\em input} & convert byte of data from piped output stream and convert into array of characters. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & -\/ catch errors when stream of bytes was unable to be read. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classinterprocess_1_1_message_a594aec63ced8dc0b7440ceae46e71c52}\label{classinterprocess_1_1_message_a594aec63ced8dc0b7440ceae46e71c52}} 
+\index{interprocess\+::\+Message@{interprocess\+::\+Message}!handle\+Int@{handle\+Int}}
+\index{handle\+Int@{handle\+Int}!interprocess\+::\+Message@{interprocess\+::\+Message}}
+\subsubsection{\texorpdfstring{handle\+Int()}{handleInt()}}
+{\footnotesize\ttfamily int interprocess.\+Message.\+handle\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Handling integer input. 
+\begin{DoxyExceptions}{Exceptions}
+{\em Input\+Mismatch\+Exception} & -\/ catch if input does not match integer requirement. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+integer value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterprocess_1_1_message_a753fc2d9bffff59d32d9a20512ac6639}\label{classinterprocess_1_1_message_a753fc2d9bffff59d32d9a20512ac6639}} 
+\index{interprocess\+::\+Message@{interprocess\+::\+Message}!produce\+Order@{produce\+Order}}
+\index{produce\+Order@{produce\+Order}!interprocess\+::\+Message@{interprocess\+::\+Message}}
+\subsubsection{\texorpdfstring{produce\+Order()}{produceOrder()}}
+{\footnotesize\ttfamily void interprocess.\+Message.\+produce\+Order (\begin{DoxyParamCaption}\item[{Piped\+Output\+Stream}]{output,  }\item[{List$<$ \hyperlink{classinterprocess_1_1_order}{Order} $>$}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convert the list of \hyperlink{classinterprocess_1_1_order}{Order} objects into J\+S\+ON string. Write the J\+S\+ON string into bytes and send to Piped\+Input\+Stream. See \hyperlink{classinterprocess_1_1_message_ada4c768cf0688deaede00d43220fd100}{consume\+Order}. 
+\begin{DoxyParams}{Parameters}
+{\em output} & connected to piped input stream where this pipe writes J\+S\+ON string in bytes to receiver. \\
+\hline
+{\em order} & list of \hyperlink{classinterprocess_1_1_order}{Order} objects by user. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Unsupported\+Encoding\+Exception} & -\/ catch errors when the message encoding into bytes have failed. \\
+\hline
+{\em I\+O\+Exception} & -\/ catch errors if write stream of bytes to pipe output stream has failed. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/interprocess/\hyperlink{_message_8java}{Message.\+java}\end{DoxyCompactItemize}

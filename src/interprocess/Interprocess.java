@@ -8,16 +8,17 @@ package interprocess;
 import java.io.*;
 
 /**
- *
+ * Interprocess --- This main class contains thread to run the pipes method
  * @author Van Do
+ * @version 1.0
  */
-public class Interprocess {
-
+public class Interprocess 
+{
     /**
      * This static void contains the runnable program for connect an inter-process communication using pipes.
-     * @param args the command line arguments
-     * @throws java.io.IOException if input is does not meet with the variables
-     * @throws InterruptedException if pipe is interrupted, it cannot complete the action of sending and receiving
+     * @param args - the command line arguments.
+     * @throws IOException - if input is does not meet with the variables.
+     * @throws InterruptedException - if pipe is interrupted, it cannot complete the action of sending and receiving.
      */
     public static void main(String[] args) throws IOException, InterruptedException 
     {

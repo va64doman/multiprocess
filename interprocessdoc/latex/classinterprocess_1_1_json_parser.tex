@@ -1,0 +1,51 @@
+\hypertarget{classinterprocess_1_1_json_parser}{}\section{interprocess.\+Json\+Parser Class Reference}
+\label{classinterprocess_1_1_json_parser}\index{interprocess.\+Json\+Parser@{interprocess.\+Json\+Parser}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classinterprocess_1_1_json_parser_a71acd9266626b51692367dcadab6bdb3}{serialize\+Colours} (List$<$ \hyperlink{classinterprocess_1_1_order}{Order} $>$ list)
+\item 
+List$<$ \hyperlink{classinterprocess_1_1_order}{Order} $>$ \hyperlink{classinterprocess_1_1_json_parser_aedad98ba21bcb5476a00ac4c66267c57}{deserialize\+Colours} (String input\+Json\+String)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classinterprocess_1_1_json_parser}{Json\+Parser} --- This class contains method to translate list of \hyperlink{classinterprocess_1_1_order}{Order} objects to J\+S\+ON string and back. \begin{DoxyAuthor}{Author}
+Van Do 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classinterprocess_1_1_json_parser_aedad98ba21bcb5476a00ac4c66267c57}\label{classinterprocess_1_1_json_parser_aedad98ba21bcb5476a00ac4c66267c57}} 
+\index{interprocess\+::\+Json\+Parser@{interprocess\+::\+Json\+Parser}!deserialize\+Colours@{deserialize\+Colours}}
+\index{deserialize\+Colours@{deserialize\+Colours}!interprocess\+::\+Json\+Parser@{interprocess\+::\+Json\+Parser}}
+\subsubsection{\texorpdfstring{deserialize\+Colours()}{deserializeColours()}}
+{\footnotesize\ttfamily List$<$\hyperlink{classinterprocess_1_1_order}{Order}$>$ interprocess.\+Json\+Parser.\+deserialize\+Colours (\begin{DoxyParamCaption}\item[{String}]{input\+Json\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Translate J\+S\+ON string to list of \hyperlink{classinterprocess_1_1_order}{Order} objects. 
+\begin{DoxyParams}{Parameters}
+{\em input\+Json\+String} & -\/ the J\+S\+ON string contains \hyperlink{classinterprocess_1_1_order}{Order} objects and will convert to list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the list of \hyperlink{classinterprocess_1_1_order}{Order} objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterprocess_1_1_json_parser_a71acd9266626b51692367dcadab6bdb3}\label{classinterprocess_1_1_json_parser_a71acd9266626b51692367dcadab6bdb3}} 
+\index{interprocess\+::\+Json\+Parser@{interprocess\+::\+Json\+Parser}!serialize\+Colours@{serialize\+Colours}}
+\index{serialize\+Colours@{serialize\+Colours}!interprocess\+::\+Json\+Parser@{interprocess\+::\+Json\+Parser}}
+\subsubsection{\texorpdfstring{serialize\+Colours()}{serializeColours()}}
+{\footnotesize\ttfamily String interprocess.\+Json\+Parser.\+serialize\+Colours (\begin{DoxyParamCaption}\item[{List$<$ \hyperlink{classinterprocess_1_1_order}{Order} $>$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Serialize a list of order into J\+S\+ON string. 
+\begin{DoxyParams}{Parameters}
+{\em list} & -\/ a list of \hyperlink{classinterprocess_1_1_order}{Order} objects from the user input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J\+S\+ON string that was being translate from list. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/interprocess/\hyperlink{_json_parser_8java}{Json\+Parser.\+java}\end{DoxyCompactItemize}

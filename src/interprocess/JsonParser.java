@@ -9,11 +9,16 @@ import java.util.*;
 import org.json.*;
 
 /**
- *
+ * JsonParser --- This class contains method to translate list of Order objects to JSON string and back.
  * @author Van Do
  */
 public class JsonParser 
 {
+    /**
+     * Serialize a list of order into JSON string.
+     * @param list - a list of Order objects from the user input.
+     * @return JSON string that was being translate from list.
+     */
     public String serializeColours(List<Order> list)
     {
         // Set JSON array for the list of orders
@@ -38,7 +43,11 @@ public class JsonParser
         String jsonString = array.toString();
         return jsonString;
     }
-
+    /**
+     * Translate JSON string to list of Order objects.
+     * @param inputJsonString - the JSON string contains Order objects and will convert to list.
+     * @return the list of Order objects.
+     */
     public List<Order> deserializeColours(String inputJsonString)
     {
         // Set JSON array using JSON string

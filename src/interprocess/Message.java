@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- *
+ * Message --- This class allows to read or write message stream from one end of the pipe to another end.
  * @author Van Do
  */
 public class Message extends Thread
@@ -20,7 +20,14 @@ public class Message extends Thread
     // Add scanner to input data for the list of order
     // Use delimiter to get string from line
     Scanner scan = new Scanner(System.in).useDelimiter("[\r\n]");
-
+    /**
+     * Convert the list of Order objects into JSON string.
+     * Write the JSON string into bytes and send to PipedInputStream. See {@link #consumeOrder}.
+     * @param output connected to piped input stream where this pipe writes JSON string in bytes to receiver.
+     * @param order list of Order objects by user.
+     * @exception UnsupportedEncodingException - catch errors when the message encoding into bytes have failed.
+     * @exception IOException - catch errors if write stream of bytes to pipe output stream has failed.
+     */
     public void produceOrder(PipedOutputStream output, List<Order> order)
     {
         try 
@@ -52,7 +59,12 @@ public class Message extends Thread
             System.out.println("Error: " + error);
         }
     }
-    
+    /**
+     * Read JSON string from piped output stream and convert into list of Order objects
+     * to make it readable for the receiver.
+     * @param input convert byte of data from piped output stream and convert into array of characters.
+     * @exception IOException - catch errors when stream of bytes was unable to be read.
+     */
     public void consumeOrder(PipedInputStream input)
     {
         try 
@@ -103,7 +115,10 @@ public class Message extends Thread
             System.out.println("Error: " + error);
         }
     }
-    
+    /**
+     * Create a list of orders by user interface.
+     * @param output using output piped stream for produce order method to enable to connect pipes.
+     */
     public void addOrder(PipedOutputStream output)
     {
         // Initialise list of order as array list
@@ -175,7 +190,12 @@ public class Message extends Thread
         // Write bytes of data using piped output stream and list of order
         produceOrder(output, order);
     }
-    // Handle integer inputs
+    // Handle integer input
+    /**
+     * Handling integer input.
+     * @exception InputMismatchException - catch if input does not match integer requirement.
+     * @return integer value
+     */
     private int handleInt()
     {
         int input = 0;
@@ -205,6 +225,7 @@ public class Message extends Thread
                 scan.nextLine();
             }
         }
+        // Return integer
         return input;
     }
 }
