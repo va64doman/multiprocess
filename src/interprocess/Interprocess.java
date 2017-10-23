@@ -27,7 +27,7 @@ public class Interprocess
         // Initialise piped output stream
         PipedOutputStream output = new PipedOutputStream();
         // Initialise piped input stream
-        PipedInputStream  input  = new PipedInputStream();
+        PipedInputStream input  = new PipedInputStream();
         // Connect to the receiver to send message
         output.connect(input);
         // Run a thread for the producer to create a list of order
