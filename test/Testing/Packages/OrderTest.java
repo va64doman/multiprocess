@@ -27,7 +27,7 @@ public class OrderTest
     JsonParser parse = new JsonParser();
     // Initialise list
     List<Order> order = new ArrayList<>();
-    
+    // Before testing, add order objects and connect piped output stream to input stream
     @Before
     public void setUp() throws IOException
     {
@@ -37,7 +37,7 @@ public class OrderTest
         order.add(new Order("Toy", 12, "John", "john@gmail.com"));
         order.add(new Order("T-shirt", 10, "Megan", "meg@hotmail.com"));
     }
-    
+    // Test if it can run thread for output stream
     @Test
     public void checkIfEnableToRunThreadForOutputStream()
     {
@@ -46,16 +46,17 @@ public class OrderTest
         Runnable outputStream = () -> message.produceOrder(output, order);
         new Thread(outputStream).start();
     }
-    
+    // Test if list can be serialise into JSON string
     @Test
     public void serializeListToJsonString()
     {
         // Check if list can convert to JSON string
         String serialize = parse.serializeColours(order);
         System.out.println("Testing list to JSON string: " + serialize);
+        // Check if the JSON string is not empty
         assertFalse("JSON String is [] because [] means empty list.", serialize.equals("[]"));
     }
-    
+    // Test if JSON string can be converted back to list
     @Test
     public void deserializeJsonStringToList()
     {
@@ -63,6 +64,7 @@ public class OrderTest
         String serialize = parse.serializeColours(order);
         List<Order> deserialize = parse.deserializeColours(serialize);
         System.out.println("Deserialize between JSON string and list");
+        // Display all of the orders' details
         for(int count = 0; count < deserialize.size(); count++)
         {
             System.out.print(deserialize.get(count).getProduct() + " ");
@@ -73,7 +75,7 @@ public class OrderTest
         }
         assertFalse("JSON string was unable to convert into list.", deserialize.isEmpty());
     }
-    
+    // After test, read stream of bytes and convert into message for piped input stream
     @After
     public void checkIfEnableToRunThreadForInputStream()
     {
