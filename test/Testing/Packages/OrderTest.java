@@ -45,6 +45,7 @@ public class OrderTest
         // After adding list, serialize list into JSON string and send to piped input stream
         Runnable outputStream = () -> message.produceOrder(output, order);
         new Thread(outputStream).start();
+        assertFalse("Pipes has been interrupted.", Thread.interrupted());
     }
     // Test if list can be serialise into JSON string
     @Test
