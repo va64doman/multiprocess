@@ -8,7 +8,9 @@ package interprocess;
 import java.io.*;
 
 /**
- * Interprocess --- This main class contains thread to run the pipes method
+ * Interprocess --- This main class contains thread to run the pipes method.
+ * <p>This is a multi-threaded communication.</p>
+ * This will focus on part of the process since one process has many threads.
  * @author Van Do
  * @version 1.0
  */
