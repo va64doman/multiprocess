@@ -144,22 +144,22 @@ public class Message extends Thread
             // Order's name, product, product's quantity and address
             String name, product, address;
             int quantity;
-            // Continue while name is empty
+            // Continue while the first character of name that is not empty
             do
             {
                 // Input customer's name
-                System.out.print("Enter your name: ");
+                System.out.print("Enter your name (This should not be blank): ");
                 name = scan.next();
             }
-            while("".equalsIgnoreCase(name));
-            // Continue while product's name is empty
+            while(isStringNullOrWhiteSpace(name));
+            // Continue while the first character of product that is not empty
             do
             {
                 // Input product
-                System.out.print("Enter the product you want to buy: ");
+                System.out.print("Enter the product you want to buy (This should not be blank): ");
                 product = scan.next();
             }
-            while("".equalsIgnoreCase(product));
+            while(isStringNullOrWhiteSpace(product));
             // Enter product's quantity
             System.out.print("Enter the number of quantity for this product: ");
             quantity = handleInt();
@@ -227,5 +227,30 @@ public class Message extends Thread
         }
         // Return integer
         return input;
+    }
+    // Handle string input for emptiness.
+    /**
+     * Handling string input for emptiness.
+     * @param value the string input by the user.
+     * @return the statement of the string is not empty.
+     */
+    private boolean isStringNullOrWhiteSpace(String value)
+    {
+        // If value is empty, then return true
+        if(value == null)
+        {
+            return true;
+        }
+        // Go through all characters in string and check if the any character is not white space
+        for(int count = 0; count < value.length(); count++)
+        {
+            // If this character is not white space, then return false
+            if(!Character.isWhitespace(value.charAt(count)))
+            {
+                return false;
+            }
+        }
+        // Return true if all characters are white space
+        return true;
     }
 }

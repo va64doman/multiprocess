@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['printdetails',['printDetails',['../classinterprocess_1_1_order.html#a780af8945598d5b31d124e0309c4ae65',1,'interprocess::Order']]],
-  ['produceorder',['produceOrder',['../classinterprocess_1_1_message.html#a753fc2d9bffff59d32d9a20512ac6639',1,'interprocess::Message']]]
+  ['order',['Order',['../classinterprocess_1_1_order.html#a5e5c6892a7af1a49723b0d5c5406bdd6',1,'interprocess.Order.Order()'],['../classinterprocess_1_1_order.html#af13a7737eb33a202266166c9c1a59227',1,'interprocess.Order.Order(String product, int quantity, String customer, String address)']]]
 ];
